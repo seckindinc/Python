@@ -83,4 +83,71 @@ for i in seq:
 print(my_list )
 
 #For filtering list we need to iterate through the list's elements and filter each of them
-print ([x for x in my_list if x > 50])
+for x in my_list:
+    if x > 50:        
+        print(x)
+        
+#Tuple Unpacking
+x = [(1,2),(3,4),(5,6)]
+
+for item in x:
+    print(item)
+    
+for item1,item2 in x:
+    print(item1)
+    print(item2)
+    
+#Exercises
+#1
+print (7**4)
+
+#2
+s = "Hi there Sam!"
+mylist =[]
+mylist = s.split()
+
+#3
+d = {'k1':[1,2,3,{'tricky':['oh','man','inception',{'target':[1,2,3,'hello']}]}]}
+d['k1'][3]['tricky'][3]['target'][3]
+
+#4
+def domainGet(string):
+    print(string[string.index('@')+1:])
+
+domainGet('seckindinc@gmail.com')
+
+#5
+import re
+def wordMatch(string):
+    match = re.search('dog',string)
+    if match:
+        print ("Found")
+        print(1)
+    else:
+        print ("Not Found")
+        print(2)
+        
+wordMatch("My dog is gone")
+
+#6
+i = 0
+import re
+def occourenceCount(string):
+    for item in string.split():
+        match = re.search('dog',string)
+        if match:
+            global i
+            i += 1
+    print("Found",i,"times")
+
+occourenceCount("dog dog dog")
+
+#7
+seq = ["soup","dog","salad","cat","great"]
+seq_new = []
+import re
+for item in seq:
+    if item[0] == "s":
+        seq_new.append(item)
+
+print (seq_new)
